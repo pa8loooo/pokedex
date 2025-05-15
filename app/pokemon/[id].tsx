@@ -23,43 +23,23 @@ export default function Pokemon ({name}: Props){
     return (
         <View style = {styles.container}>
             <View style = {styles.header}>
-                <Image source={{uri: pokemon.sprite.front_default }} style = {{ width: 100, height: 100 }} />
+                <Image source={{uri: pokemon?.sprites?.front_default }} style = {{ width: 100, height: 100 }} />
             </View>
 
             <Text style = {styles.namePokemon}>{name}</Text>
 
             <View style = {styles.infoPokemon}>
                 <View style = {styles.info}>
-                <Text style = {styles.infoText1}>0.9m</Text>
+                <Text style = {styles.infoText1}>{pokemon.height / 10} m</Text>
                 <Text style = {styles.infoText2}>Altura</Text>
                 </View>
                 <View style = {styles.info}>
-                <Text style = {styles.infoText1}>6.9kg</Text>
+                <Text style = {styles.infoText1}>{pokemon.weight / 10} kg</Text>
                 <Text style = {styles.infoText2}>Peso</Text>
                 </View>
             </View>
 
-            <Text style = {styles.textEvolutions}>Evoluções</Text>
-
-            <View style = {styles.footer}>
-              <View style = {styles.footerCardContainer}>
-                 <View style = {styles.footerCard}>
-                      <Image source={require("../assets/001.png")} style = {styles.image} />
-                      <Text>Bulbasaur</Text>
-                  </View>
-                 
-                 <View style = {styles.footerCard}>
-                     <Image source={require("../assets/002.png")} style = {styles.image} />
-                     <Text>Ivysaur</Text>
-                 </View>
-                 
-                 <View style = {styles.footerCard}>
-                     <Image source={require("../assets/003.png")} style = {styles.image} />
-                     <Text>Venusaur</Text>
-                 </View>
-                 
-              </View>
-            </View>
+            
         </View>
     )
 }
